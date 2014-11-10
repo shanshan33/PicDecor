@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DecorationViewController.h
 //  PicDecor
 //
 //  Created by Shanshan ZHAO on 03/11/14.
@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface DecorationViewController : UIViewController
+
+@property (nonatomic, strong) UIImage * selectedImage;
 
 
 @end
-

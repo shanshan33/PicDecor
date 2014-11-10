@@ -1,25 +1,188 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WZU-M3-b0G">
+                                <rect key="frame" x="90" y="133" width="141" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="lens"/>
+                                <connections>
+                                    <action selector="clickedCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gOa-th-Brh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="I3t-Fa-5gV">
+                                <rect key="frame" x="103" y="319" width="115" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="album"/>
+                                <connections>
+                                    <action selector="clickedAlbumButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YMO-sX-c4K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="148" y="317.99999999999994"/>
+        </scene>
+        <!--Image Editing View Controller-->
+        <scene sceneID="wcM-59-M5C">
+            <objects>
+                <viewController storyboardIdentifier="ImageEditingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aYL-uT-pGD" customClass="ImageEditingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SoW-dR-83R">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="yy4-3Q-J0r">
+                                <rect key="frame" x="0.0" y="20" width="320" height="490"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="jRE-bq-y4f">
+                                <rect key="frame" x="0.0" y="516" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <items>
+                                    <barButtonItem width="12" style="plain" systemItem="fixedSpace" id="SGQ-qZ-X3N"/>
+                                    <barButtonItem title="Discard" width="60" id="7iW-ia-wmh">
+                                        <connections>
+                                            <action selector="discardDecroation:" destination="aYL-uT-pGD" id="Kkw-WX-hw8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Decroate" width="60" id="MMV-HD-sdb">
+                                        <connections>
+                                            <action selector="clickDecroateButton:" destination="aYL-uT-pGD" id="kwq-rn-o1J"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Save" width="60" id="Zah-Vt-DV6">
+                                        <connections>
+                                            <action selector="saveImageToAlbum:" destination="aYL-uT-pGD" id="lPd-v1-moE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Email" width="60" id="P4C-un-1ee">
+                                        <connections>
+                                            <action selector="clickEmailButton:" destination="aYL-uT-pGD" id="r7A-Nh-bXX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="12" style="plain" systemItem="fixedSpace" id="CvG-wa-l0v"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="editingImageView" destination="yy4-3Q-J0r" id="YfE-qq-3mf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTz-mG-rib" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="676" y="278"/>
+        </scene>
+        <!--Decoration View Controller-->
+        <scene sceneID="5tc-1b-tOI">
+            <objects>
+                <viewController storyboardIdentifier="DecorationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uGK-Xu-KGY" customClass="DecorationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dXP-Wa-j2y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="InC-ll-p9h">
+                                <rect key="frame" x="32" y="59" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="glasses"/>
+                                <connections>
+                                    <action selector="doImageButton:" destination="uGK-Xu-KGY" eventType="touchUpInside" id="RzH-U2-jHb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8An-wN-a1I">
+                                <rect key="frame" x="170" y="59" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="DP_Glasses">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doImageButton:" destination="uGK-Xu-KGY" eventType="touchUpInside" id="oaf-Rb-VWB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sVf-Ee-VMc">
+                                <rect key="frame" x="32" y="232" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="album">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doImageButton:" destination="uGK-Xu-KGY" eventType="touchUpInside" id="78x-aF-cjN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HY5-2J-Qvb">
+                                <rect key="frame" x="170" y="232" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="splash_of_stars">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doImageButton:" destination="uGK-Xu-KGY" eventType="touchUpInside" id="nF1-ow-sIY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gDQ-bA-dlu">
+                                <rect key="frame" x="43" y="414" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="lens">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doImageButton:" destination="uGK-Xu-KGY" eventType="touchUpInside" id="dEY-GX-YJX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VaG-oY-VCM">
+                                <rect key="frame" x="170" y="414" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="flower">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doImageButton:" destination="uGK-Xu-KGY" eventType="touchUpInside" id="pt4-Iw-v40"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gwM-EW-T0H">
+                                <rect key="frame" x="139" y="518" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doCancelButton:" destination="uGK-Xu-KGY" eventType="touchUpInside" id="hJH-gR-2Ru"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gmn-Ah-tm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061" y="278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DP_Glasses" width="761" height="338"/>
+        <image name="album" width="512" height="512"/>
+        <image name="flower" width="422" height="600"/>
+        <image name="glasses" width="300" height="270"/>
+        <image name="lens" width="1280" height="1024"/>
+        <image name="splash_of_stars" width="241" height="232"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
